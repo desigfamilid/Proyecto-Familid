@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAMILID Bodas — La firma de vuestra nueva familia</title>
+<meta name="description" content="El logo nupcial exclusivo de vuestra boda. Diseñado a medida por agentes de IA entrenados para bodas. En menos de 24 horas. Desde 89€.">
+<meta name="keywords" content="logo boda personalizado, monograma nupcial, firma nupcial, identidad visual boda, logo pareja boda, save the date personalizado, diseño logo boda españa, web de boda personalizada">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://familid.es/bodas/">
+<meta property="og:title" content="FAMILID Bodas — La firma de vuestra nueva familia">
+<meta property="og:description" content="El logo nupcial exclusivo de vuestra boda. Diseñado a medida. En menos de 24 horas.">
+<meta property="og:image" content="https://familid.es/images/FamilID_Imagotipo_oro.svg">
+<meta property="og:url" content="https://familid.es/bodas/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #f9f6f1;
+  --ink:   #18120c;
+  --gold:  #d6b558;
+  --muted: rgba(24,18,12,0.45);
+  --muted-light: rgba(249,246,241,0.5);
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'LINE Seed JP', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; }
+
+/* ── TIPOGRAFÍA: solo 2 tamaños ── */
+.t-big { font-size: clamp(36px, 5.5vw, 68px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; }
+.t-body { font-size: 16px; font-weight: 300; line-height: 1.75; }
+em { font-style: italic; color: var(--gold); }
+strong { font-weight: 700; color: inherit; }
+
+/* ── UTILIDADES ── */
+.label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); font-weight: 400; display: block; margin-bottom: 1.5rem; }
+.divider-v { width: 1px; height: 48px; background: var(--gold); margin: 2rem auto; opacity: 0.5; }
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; }
+
+/* ── CTB ── */
+.ctb { display: inline-block; padding: 14px 36px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.25s; font-family: 'LINE Seed JP', sans-serif; cursor: pointer; border: none; }
+.ctb-gold { background: var(--gold); color: var(--ink); }
+.ctb-gold:hover { opacity: 0.85; }
+.ctb-dark { background: var(--ink); color: var(--cream); }
+.ctb-dark:hover { background: #2c2018; }
+.ctb-outline-cream { background: transparent; color: var(--cream); border: 1px solid rgba(249,246,241,0.35); }
+.ctb-outline-cream:hover { border-color: var(--cream); background: rgba(249,246,241,0.06); }
+.ctb-outline-ink { background: transparent; color: var(--ink); border: 1px solid rgba(24,18,12,0.25); }
+.ctb-outline-ink:hover { background: var(--ink); color: var(--cream); }
+.ctb-sm { padding: 10px 24px; font-size: 11px; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  padding: 1.25rem 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(249,246,241,0.93);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(24,18,12,0.07);
+  transition: box-shadow 0.3s;
+}
+@media (prefers-color-scheme: dark) {
+  nav { background: rgba(24,18,12,0.93); border-bottom-color: rgba(249,246,241,0.07); }
+  .logo-dark { display: none !important; }
+  .logo-light { display: block !important; }
+}
+.logo-dark { display: block; }
+.logo-light { display: none; }
+.nav-logo img { height: 28px; display: block; }
+.nav-links { display: flex; gap: 2.5rem; }
+.nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; font-weight: 400; letter-spacing: 0.02em; transition: color 0.2s; }
+.nav-links a:hover { color: var(--ink); }
+
+/* ── HERO ── */
+.hero { min-height: 100vh; background: var(--cream); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 9rem 2rem 5rem; }
+.hero-image { width: 100%; max-width: 960px; margin: 4rem auto 0; aspect-ratio: 16/9; background: rgba(24,18,12,0.06); border-radius: 2px; overflow: hidden; }
+.hero-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-image-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.hero-image-placeholder span { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+
+/* ── SECCIONES ALTERNADAS ── */
+.s-cream { background: var(--cream); padding: 8rem 2rem; }
+.s-ink { background: var(--ink); padding: 8rem 2rem; }
+.s-inner { max-width: 760px; margin: 0 auto; }
+.s-inner-wide { max-width: 1040px; margin: 0 auto; }
+.s-center { text-align: center; }
+
+/* ── SEGUNDA SECCIÓN (emocional) ── */
+.emocion-quote { color: var(--cream); max-width: 680px; margin: 0 auto; }
+.emocion-sub { color: var(--muted-light); margin-top: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+/* ── PROMESA 3 COLUMNAS ── */
+.promesa-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 3rem; margin-top: 4rem; }
+.promesa-num { font-size: 11px; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 1rem; font-weight: 400; }
+.promesa-title { font-size: 18px; font-weight: 400; line-height: 1.3; margin-bottom: 0.5rem; }
+.promesa-text { color: var(--muted); }
+
+/* ── PROCESO ── */
+.proceso-steps { margin-top: 4rem; }
+.proceso-step { display: grid; grid-template-columns: 56px 1fr; gap: 2rem; padding: 2.5rem 0; border-top: 1px solid rgba(249,246,241,0.08); }
+.proceso-step:last-child { border-bottom: 1px solid rgba(249,246,241,0.08); }
+.proceso-num { font-size: 11px; letter-spacing: 0.15em; color: var(--gold); padding-top: 3px; font-weight: 400; }
+.proceso-step-title { font-size: 19px; font-weight: 400; color: var(--cream); margin-bottom: 0.4rem; line-height: 1.3; }
+.proceso-step-text { color: var(--muted-light); }
+.proceso-badge { display: inline-block; margin-top: 0.75rem; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; background: rgba(214,181,88,0.15); color: var(--gold); border-radius: 2px; }
+.fase-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin: 3.5rem 0 0.5rem; font-weight: 400; opacity: 0.7; }
+
+/* ── PACKS ── */
+.packs-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; margin-top: 4rem; }
+.pack-card { padding: 2.5rem; border: 1px solid rgba(24,18,12,0.1); border-radius: 2px; display: flex; flex-direction: column; background: var(--cream); transition: border-color 0.2s; }
+.pack-card:hover { border-color: var(--gold); }
+.pack-card.featured { background: var(--ink); border-color: var(--gold); }
+.pack-card.soon { opacity: 0.75; }
+.pack-badge { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; display: inline-block; margin-bottom: 1.25rem; align-self: flex-start; }
+.pack-badge-gold { background: var(--gold); color: var(--ink); }
+.pack-badge-muted { background: rgba(24,18,12,0.08); color: var(--muted); }
+.pack-badge-muted-light { background: rgba(249,246,241,0.1); color: rgba(249,246,241,0.5); }
+.pack-name { font-size: 22px; font-weight: 400; margin-bottom: 0.25rem; line-height: 1.2; }
+.pack-card.featured .pack-name { color: var(--cream); }
+.pack-price { font-size: 48px; font-weight: 300; letter-spacing: -0.03em; line-height: 1; margin: 1rem 0 0.25rem; }
+.pack-card.featured .pack-price { color: var(--gold); }
+.pack-price sup { font-size: 0.3em; vertical-align: super; }
+.pack-price-note { font-size: 12px; color: var(--muted); margin-bottom: 2rem; letter-spacing: 0.04em; }
+.pack-card.featured .pack-price-note { color: var(--muted-light); }
+.pack-list { list-style: none; flex: 1; border-top: 1px solid rgba(24,18,12,0.08); }
+.pack-card.featured .pack-list { border-top-color: rgba(249,246,241,0.08); }
+.pack-list li { padding: 0.9rem 0; border-bottom: 1px solid rgba(24,18,12,0.06); display: flex; align-items: flex-start; gap: 0.75rem; font-size: 14px; font-weight: 300; line-height: 1.5; }
+.pack-card.featured .pack-list li { color: rgba(249,246,241,0.75); border-bottom-color: rgba(249,246,241,0.06); }
+.pack-list li::before { content: '✦'; color: var(--gold); font-size: 9px; margin-top: 4px; flex-shrink: 0; }
+.pack-nota { font-size: 13px; font-style: italic; margin-top: 1.75rem; padding: 1.25rem 1.5rem; background: rgba(214,181,88,0.08); border-left: 2px solid var(--gold); font-weight: 300; line-height: 1.6; color: var(--muted); }
+.pack-card.featured .pack-nota { background: rgba(214,181,88,0.08); color: rgba(249,246,241,0.5); }
+.pack-cta { margin-top: 2rem; }
+.pack-soon-text { font-size: 14px; font-weight: 300; line-height: 1.7; margin: 1rem 0 1.75rem; }
+.pack-card.featured .pack-soon-text { color: rgba(249,246,241,0.55); }
+
+/* ── FAQ ── */
+.faq-list { margin-top: 3rem; }
+.faq-item { border-top: 1px solid rgba(24,18,12,0.08); }
+.faq-item:last-child { border-bottom: 1px solid rgba(24,18,12,0.08); }
+.faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; background: none; border: none; cursor: pointer; font-family: 'LINE Seed JP', sans-serif; font-size: 16px; font-weight: 400; color: var(--ink); text-align: left; gap: 1rem; transition: color 0.2s; }
+.faq-q:hover { color: var(--gold); }
+.faq-icon { font-size: 20px; color: var(--gold); flex-shrink: 0; transition: transform 0.3s; font-weight: 300; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a { display: none; padding-bottom: 1.5rem; font-size: 15px; color: var(--muted); font-weight: 300; line-height: 1.75; }
+.faq-item.open .faq-a { display: block; }
+
+/* ── CTA FINAL ── */
+.cta-final-title { color: var(--cream); max-width: 560px; margin: 0 auto 1rem; text-align: center; }
+.cta-final-sub { color: var(--muted-light); text-align: center; margin-bottom: 2.5rem; }
+.form-wrap { max-width: 600px; margin: 3rem auto 0; background: var(--cream); border-radius: 2px; overflow: hidden; }
+.form-note { font-size: 12px; color: rgba(249,246,241,0.2); text-align: center; margin-top: 1.5rem; letter-spacing: 0.05em; }
+
+/* ── LEGAL ── */
+.legal-section { background: var(--ink); padding: 5rem 2rem; }
+.legal-tabs { display: flex; gap: 0; border-bottom: 1px solid rgba(249,246,241,0.1); margin-bottom: 2.5rem; }
+.legal-tab { padding: 0.75rem 1.5rem; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 400; color: rgba(249,246,241,0.35); background: none; border: none; cursor: pointer; font-family: 'LINE Seed JP', sans-serif; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.2s; }
+.legal-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+.legal-panel { display: none; }
+.legal-panel.active { display: block; }
+.legal-panel h3 { font-size: 15px; font-weight: 700; color: var(--cream); margin: 1.5rem 0 0.4rem; }
+.legal-panel p { font-size: 13px; color: rgba(249,246,241,0.45); line-height: 1.75; margin-bottom: 0.75rem; font-weight: 300; }
+.legal-updated { font-size: 11px; color: rgba(249,246,241,0.2); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(249,246,241,0.06); }
+
+/* ── CARRUSEL ── */
+.carousel { position: relative; overflow: hidden; border-radius: 2px; }
+.carousel-track { display: flex; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+.carousel-slide { min-width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+.carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.carousel-placeholder { width: 100%; height: 100%; background: rgba(24,18,12,0.06); display: flex; align-items: center; justify-content: center; }
+.carousel-placeholder span { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+.carousel-placeholder-dark { background: rgba(249,246,241,0.04); }
+.carousel-placeholder-dark span { color: rgba(249,246,241,0.2); }
+.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: var(--cream); color: var(--ink); border: none; cursor: pointer; width: 44px; height: 44px; border-radius: 50%; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; z-index: 2; font-family: inherit; opacity: 0.9; }
+.carousel-btn:hover { background: var(--gold); color: var(--ink); opacity: 1; }
+.carousel-prev { left: 1rem; }
+.carousel-next { right: 1rem; }
+.carousel-btn-light { background: rgba(249,246,241,0.12); color: var(--cream); border: 1px solid rgba(249,246,241,0.15); }
+.carousel-btn-light:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+.carousel-dots { display: flex; justify-content: center; gap: 6px; margin-top: 1.25rem; }
+.carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(24,18,12,0.2); border: none; cursor: pointer; padding: 0; transition: all 0.2s; }
+.carousel-dot.active { background: var(--gold); transform: scale(1.3); }
+.carousel-dots-light .carousel-dot { background: rgba(249,246,241,0.2); }
+.carousel-dots-light .carousel-dot.active { background: var(--gold); }
+
+/* ── FOOTER ── */
+footer { background: var(--ink); padding: 2rem 2.5rem; border-top: 1px solid rgba(249,246,241,0.06); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-logo img { height: 22px; }
+.footer-right { display: flex; gap: 2rem; align-items: center; }
+.footer-right a { font-size: 12px; color: rgba(249,246,241,0.25); text-decoration: none; transition: color 0.2s; }
+.footer-right a:hover { color: var(--gold); }
+.footer-tag { font-size: 12px; color: rgba(249,246,241,0.2); font-style: italic; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.25rem; }
+  .nav-links { display: none; }
+  .promesa-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .packs-grid { grid-template-columns: 1fr; }
+  .proceso-step { grid-template-columns: 40px 1fr; gap: 1.25rem; }
+  footer { flex-direction: column; }
+  .footer-right { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .legal-tabs { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="nav">
+  <a href="https://familid.es" class="nav-logo">
+    <img class="logo-dark" src="../images/FamilID_Imagotipo_negro.svg" alt="FAMILID">
+    <img class="logo-light" src="../images/FamilID_Imagotipo_oro.svg" alt="FAMILID">
+  </a>
+  <div class="nav-links">
+    <a href="#galeria">Galería</a>
+    <a href="#proceso">Cómo funciona</a>
+    <a href="#packs">Precios</a>
+    <a href="#faq">Preguntas frecuentes</a>
+  </div>
+  <a href="#formulario" class="ctb ctb-gold">Crear nuestro logo</a>
+</nav>
+
+
+<!-- ── HERO ── -->
+<section class="hero s-cream">
+  <span class="label reveal">FAMILID Bodas</span>
+  <h1 class="t-big s-center reveal">
+    Dos personas.<br>Una historia única.<br><em>Una firma para siempre.</em>
+  </h1>
+  <div class="divider-v reveal"></div>
+  <p class="t-body s-center reveal" style="max-width:440px;color:var(--muted);">
+    Cuéntanos quiénes sois juntos.<br>El resto lo hacemos nosotros.
+  </p>
+  <div style="margin-top:2.5rem;" class="reveal">
+    <a href="#formulario" class="ctb ctb-dark">Quiero la firma de nuestra boda</a>
+  </div>
+
+  <div class="carousel reveal" id="galeria" style="margin-top:4rem;width:100%;max-width:960px;">
+    <div class="carousel-track">
+      <div class="carousel-slide"><img src="../images/boda1.jpg" alt="Logo nupcial ejemplo 1"></div>
+      <div class="carousel-slide"><img src="../images/boda2.jpg" alt="Logo nupcial ejemplo 2"></div>
+      <div class="carousel-slide"><img src="../images/boda3.jpg" alt="Logo nupcial ejemplo 3"></div>
+      <div class="carousel-slide"><img src="../images/boda4.jpg" alt="Logo nupcial ejemplo 4"></div>
+      <div class="carousel-slide"><img src="../images/boda5.jpg" alt="Logo nupcial ejemplo 5"></div>
+      <div class="carousel-slide"><img src="../images/boda6.jpg" alt="Logo nupcial ejemplo 6"></div>
+      <div class="carousel-slide"><img src="../images/boda7.jpg" alt="Logo nupcial ejemplo 7"></div>
+      <div class="carousel-slide"><img src="../images/boda8.jpg" alt="Logo nupcial ejemplo 8"></div>
+      <div class="carousel-slide"><img src="../images/boda9.jpg" alt="Logo nupcial ejemplo 9"></div>
+      <div class="carousel-slide"><img src="../images/boda10.jpg" alt="Logo nupcial ejemplo 10"></div>
+    </div>
+    <button class="carousel-btn carousel-prev" onclick="moveCarousel('galeria',-1)">&#8592;</button>
+    <button class="carousel-btn carousel-next" onclick="moveCarousel('galeria',1)">&#8594;</button>
+    <div class="carousel-dots" id="galeria-dots"></div>
+  </div>
+</section>
+
+
+<!-- ── EMOCIÓN ── -->
+<section class="s-ink s-center">
+  <div class="s-inner reveal">
+    <h2 class="t-big emocion-quote">
+      Dentro de veinte años,<br>
+      rebuscando en una caja,<br>
+      encontraréis esta firma.<br>
+      <em>Y os sentiréis como hoy.</em>
+    </h2>
+    <p class="t-body emocion-sub reveal d2">
+      No es solo un logo para la invitación.<br>
+      Es el símbolo de vuestra nueva familia.<br>
+      El primero de todos.
+    </p>
+  </div>
+</section>
+
+
+<!-- ── PROMESA ── -->
+<section class="s-cream">
+  <div class="s-inner">
+    <span class="label reveal">Lo que hacemos</span>
+    <h2 class="t-big reveal" style="max-width:580px;">
+      Traducimos vuestra historia<br>en una imagen que <em>solo existe para vosotros.</em>
+    </h2>
+    <div class="promesa-grid">
+      <div class="reveal d1">
+        <div class="promesa-num">01</div>
+        <h3 class="promesa-title">Exclusiva.<br>Solo vuestra.</h3>
+        <p class="t-body promesa-text">Cada logo se crea una sola vez, para una sola pareja. No existe otra igual. Nunca.</p>
+      </div>
+      <div class="reveal d2">
+        <div class="promesa-num">02</div>
+        <h3 class="promesa-title">En menos<br>de 24 horas.</h3>
+        <p class="t-body promesa-text">En negro y en vuestro color. En vuestro email antes de que lo esperéis.</p>
+      </div>
+      <div class="reveal d3">
+        <div class="promesa-num">03</div>
+        <h3 class="promesa-title">Para siempre.<br>Sin límites.</h3>
+        <p class="t-body promesa-text">Licencia personal de por vida. Para cualquier proveedor, cualquier soporte, cualquier momento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PROCESO ── -->
+<section class="s-ink" id="proceso">
+  <div class="s-inner">
+    <span class="label reveal">El proceso</span>
+    <h2 class="t-big reveal" style="color:var(--cream);max-width:500px;">
+      Sencillo.<br>Rápido. <em>Vuestro.</em>
+    </h2>
+
+    <p class="fase-label reveal">Fase I — Creación del logo</p>
+    <div class="proceso-steps">
+      <div class="proceso-step reveal">
+        <span class="proceso-num">I</span>
+        <div>
+          <h3 class="proceso-step-title">Nos contáis vuestra historia</h3>
+          <p class="t-body proceso-step-text">Un cuestionario de identidad nupcial. Sin tecnicismos. Sin saber de diseño. Solo cuéntanos quiénes sois, qué os define, qué colores sentís como vuestros.</p>
+          <span class="proceso-badge">Unos minutos</span>
+        </div>
+      </div>
+      <div class="proceso-step reveal">
+        <span class="proceso-num">II</span>
+        <div>
+          <h3 class="proceso-step-title">Nuestros agentes de IA crean vuestro logo</h3>
+          <p class="t-body proceso-step-text">Entrenados específicamente para bodas. Psicología del color, composición, identidad nupcial. No es una IA genérica — traduce vuestra esencia en forma y emoción.</p>
+          <span class="proceso-badge">Menos de 24 horas</span>
+        </div>
+      </div>
+      <div class="proceso-step reveal">
+        <span class="proceso-num">III</span>
+        <div>
+          <h3 class="proceso-step-title">Recibís vuestro logo en el email</h3>
+          <p class="t-body proceso-step-text">En negro y en vuestro color. Listos para usar de inmediato.</p>
+          <span class="proceso-badge">En vuestro email</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="fase-label reveal" style="margin-top:3rem;">Fase II — Tras confirmar el pedido</p>
+    <div class="proceso-steps">
+      <div class="proceso-step reveal">
+        <span class="proceso-num">IV</span>
+        <div>
+          <h3 class="proceso-step-title">Archivos originales con licencia personal</h3>
+          <p class="t-body proceso-step-text">SVG y PNG en negro y color, sin fondo — listos para entregar a cualquier proveedor: imprenta, bordador, personalización de detalles o cualquier superficie.</p>
+          <span class="proceso-badge">Descarga inmediata</span>
+        </div>
+      </div>
+      <div class="proceso-step reveal">
+        <span class="proceso-num">V</span>
+        <div>
+          <h3 class="proceso-step-title">Save the Date personalizado</h3>
+          <p class="t-body proceso-step-text">Lo primero que ven vuestros invitados. Una imagen digital con vuestra firma, vuestra fecha y vuestros nombres — lista para enviar por WhatsApp o email en cuestión de horas. El proceso de invitaciones empieza aquí.</p>
+          <span class="proceso-badge">Lo antes de todo</span>
+        </div>
+      </div>
+      <div class="proceso-step reveal">
+        <span class="proceso-num">VI</span>
+        <div>
+          <h3 class="proceso-step-title">Cuestionario para la web de vuestra boda <span style="font-size:11px;color:var(--gold);vertical-align:middle;"> — Pack Digital+Web</span></h3>
+          <p class="t-body proceso-step-text">Si elegisteis el Pack Digital+Web, comenzamos con un breve cuestionario para crear vuestra web nupcial: información de la boda, confirmación de asistencia, ubicaciones, trayectos y todo lo que vuestros invitados necesiten saber.</p>
+          <span class="proceso-badge">Solo Pack Digital+Web</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── GALERÍA ANTES DE PACKS ── -->
+<section class="s-ink" style="padding:5rem 2rem;">
+  <div class="s-inner-wide s-center">
+    <em class="label" style="font-style:italic;">Imaginad esto con vuestra firma.</em>
+    <div class="carousel reveal" id="carousel-logos" style="margin-top:2rem;max-width:860px;margin-left:auto;margin-right:auto;">
+      <div class="carousel-track carousel-track-dark">
+        <div class="carousel-slide"><img src="../images/logo-boda1.jpg" alt="Ejemplo logo nupcial 1"></div>
+        <div class="carousel-slide"><img src="../images/logo-boda2.jpg" alt="Ejemplo logo nupcial 2"></div>
+        <div class="carousel-slide"><img src="../images/logo-boda3.jpg" alt="Ejemplo logo nupcial 3"></div>
+        <div class="carousel-slide"><img src="../images/logo-boda4.jpg" alt="Ejemplo logo nupcial 4"></div>
+        <div class="carousel-slide"><img src="../images/logo-boda5.jpg" alt="Ejemplo logo nupcial 5"></div>
+        <div class="carousel-slide"><img src="../images/logo-boda6.jpg" alt="Ejemplo logo nupcial 6"></div>
+        <div class="carousel-slide"><img src="../images/logo-boda7.jpg" alt="Ejemplo logo nupcial 7"></div>
+        <div class="carousel-slide"><img src="../images/logo-boda8.jpg" alt="Ejemplo logo nupcial 8"></div>
+        <div class="carousel-slide"><img src="../images/logo-boda9.jpg" alt="Ejemplo logo nupcial 9"></div>
+        <div class="carousel-slide"><img src="../images/logo-boda10.jpg" alt="Ejemplo logo nupcial 10"></div>
+      </div>
+      <button class="carousel-btn carousel-btn-light carousel-prev" onclick="moveCarousel('carousel-logos',-1)">&#8592;</button>
+      <button class="carousel-btn carousel-btn-light carousel-next" onclick="moveCarousel('carousel-logos',1)">&#8594;</button>
+      <div class="carousel-dots carousel-dots-light" id="carousel-logos-dots"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PACKS ── -->
+<section class="s-cream" id="packs">
+  <div class="s-inner-wide">
+    <span class="label reveal">Los packs</span>
+    <h2 class="t-big reveal" style="max-width:560px;">
+      Elegid el que se adapta<br>a <em>vuestro momento.</em>
+    </h2>
+
+    <div class="packs-grid">
+
+      <!-- PACK DIGITAL -->
+      <div class="pack-card reveal">
+        <span class="pack-badge pack-badge-muted">Pack Digital</span>
+        <h3 class="pack-name">La firma de vuestra boda</h3>
+        <div class="pack-price"><sup>€</sup>89</div>
+        <p class="pack-price-note">IVA incluido · Un pago único</p>
+        <ul class="pack-list">
+          <li>Logo en negro — SVG y PNG sin fondo</li>
+          <li>Logo en vuestro color — SVG y PNG sin fondo</li>
+          <li>Un segundo color gratis, cuando queráis</li>
+          <li>Save the Date personalizado con vuestra firma</li>
+          <li>Licencia personal de por vida para proveedores</li>
+        </ul>
+        <div class="pack-nota">Los 89€ de hoy se descuentan de cualquier próximo paso con FAMILID.</div>
+        <div class="pack-cta">
+          <a href="#formulario" class="ctb ctb-dark">Empezar →</a>
+        </div>
+      </div>
+
+      <!-- PACK DIGITAL + WEB -->
+      <div class="pack-card featured reveal d1">
+        <span class="pack-badge pack-badge-gold">⭐ Más completo</span>
+        <h3 class="pack-name" style="color:var(--cream);">La firma y vuestra web nupcial</h3>
+        <div class="pack-price"><sup>€</sup>99</div>
+        <p class="pack-price-note">IVA incluido · Un pago único</p>
+        <ul class="pack-list">
+          <li>Todo lo del Pack Digital incluido</li>
+          <li>Web de vuestra boda personalizada con vuestra firma</li>
+          <li>Información de la boda, ceremonia y celebración</li>
+          <li>Confirmación de asistencia de invitados</li>
+          <li>Ubicaciones y cómo llegar</li>
+          <li>Todo lo que vuestros invitados necesitan saber</li>
+        </ul>
+        <div class="pack-nota">Con vuestra firma en cada página. Una web tan vuestra como el día en sí.</div>
+        <div class="pack-cta">
+          <a href="#formulario" class="ctb ctb-gold">Empezar →</a>
+        </div>
+      </div>
+
+      <!-- PACK CARTELERÍA — PRÓXIMAMENTE -->
+      <div class="pack-card soon reveal d2">
+        <span class="pack-badge pack-badge-muted">Próximamente</span>
+        <h3 class="pack-name">Pack Cartelería</h3>
+        <p class="t-body pack-soon-text">
+          Vuestro siting de mesas con vuestra firma.<br>
+          Minuta de la cena y cartel de bienvenida.<br>
+          Cada detalle, coordinado.
+        </p>
+        <div class="pack-cta">
+          <a href="https://tally.so/r/D4vv7l" target="_blank" class="ctb ctb-outline-ink ctb-sm">Avisarme cuando esté disponible</a>
+        </div>
+      </div>
+
+      <!-- PACK ATELIER -->
+      <div class="pack-card reveal d3">
+        <span class="pack-badge pack-badge-muted">Pack Atelier</span>
+        <h3 class="pack-name">Diseño 100% a mano</h3>
+        <div style="margin:1rem 0 0.25rem;font-size:22px;font-weight:300;color:var(--gold);">Presupuesto personalizado</div>
+        <p class="pack-price-note">Para quien quiere algo sin límites</p>
+        <ul class="pack-list">
+          <li>Todo lo del Pack Digital incluido</li>
+          <li>Videollamada personal con nuestra diseñadora</li>
+          <li>Logo creado 100% a mano — sin IA, sin plantillas</li>
+          <li>Criterio artístico puro, dedicación completa</li>
+          <li>El resultado más personal que podemos ofrecer</li>
+        </ul>
+        <div class="pack-nota">Solo para parejas que quieren algo verdaderamente irrepetible. Plazas muy limitadas.</div>
+        <div class="pack-cta">
+          <a href="mailto:design@familid.es?subject=Consulta Pack Atelier Bodas" class="ctb ctb-outline-ink">Consultar precio →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FAQ ── -->
+<section class="s-cream" id="faq">
+  <div class="s-inner">
+    <span class="label reveal">Preguntas frecuentes</span>
+    <h2 class="t-big reveal" style="max-width:520px;">
+      Todo lo que queréis<br>saber <em>antes de decidir.</em>
+    </h2>
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Cuándo es el mejor momento para encargar el logo?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Lo antes posible. El logo es lo primero que necesitáis — antes de elegir imprenta, antes de diseñar las invitaciones, antes de cualquier personalización. Y el Save the Date que viene incluido os permite empezar a avisar a los invitados desde el primer momento.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Puedo usar el logo con cualquier proveedor o imprenta?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Sí, completamente. La licencia personal que recibiréis os permite entregar los archivos a cualquier proveedor — imprenta, bordador, personalización de ropa, cerámica, lo que necesitéis. El logo es vuestro. Para siempre. Sin restricciones.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Qué diferencia hay entre el Pack Digital y el Pack Digital+Web?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">El Pack Digital incluye todo lo que necesitáis para el logo: los archivos en todos los formatos, el Save the Date y la licencia para proveedores. El Pack Digital+Web añade vuestra propia web nupcial personalizada con vuestra firma — con información de la boda, confirmación de asistencia de invitados, ubicaciones y todo lo que vuestros invitados necesitan.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Qué es exactamente el Save the Date?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Es una imagen digital personalizada con vuestra firma, vuestra fecha y vuestros nombres — diseñada para que los invitados reserven la fecha desde el primer momento. Lista para enviar por WhatsApp o email. No hay nada más sencillo ni más elegante para empezar el proceso de invitaciones.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Y si no me convence el resultado?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Nos lo decís y buscamos solución. Si el resultado no os representa, lo revisamos. Si queréis algo más profundo desde el principio — una videollamada con nuestra diseñadora, un proceso 100% artesanal — el Pack Atelier está pensado para eso.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Cómo funciona el segundo color gratis?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Incluido en todos los packs. Si en algún momento queréis vuestro logo en un color diferente — para una segunda temporada, para un nuevo uso — nos lo pedís y os lo enviamos al momento. Sin coste adicional, sin tramitar nada.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Qué son los agentes de IA entrenados para bodas?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">No es una IA genérica. Nuestros agentes han sido entrenados específicamente para esta experiencia nupcial — con conocimientos de psicología del color, composición tipográfica e identidad de pareja. Interpretan vuestra historia y la traducen en un lenguaje visual coherente y bello. Para quien quiere que el proceso sea 100% humano y artesanal, el Pack Atelier es la respuesta.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CTA FINAL + FORMULARIO ── -->
+<section class="s-ink s-center" id="formulario">
+  <div class="s-inner">
+    <span class="label reveal">Vuestro turno</span>
+    <h2 class="t-big cta-final-title reveal">
+      Vuestra boda merece<br><em>algo que solo exista para vosotros.</em>
+    </h2>
+    <p class="t-body cta-final-sub reveal">
+      Cuéntanos quiénes sois. Sin tecnicismos, sin complicaciones.<br>
+      Vuestro logo, en menos de 24 horas.
+    </p>
+    <a href="#formulario" class="ctb ctb-gold reveal" style="margin-bottom:0.75rem;display:inline-block;">Empezar el cuestionario</a>
+    <div class="form-wrap reveal">
+      <iframe src="https://tally.so/r/D4vv7l" width="100%" height="640" frameborder="0" marginheight="0" marginwidth="0" title="Cuestionario de identidad nupcial FAMILID" style="display:block;"></iframe>
+    </div>
+    <p class="form-note reveal">Sin compromiso · Logo exclusivo, nunca repetido · Licencia personal de por vida</p>
+  </div>
+</section>
+
+
+<!-- ── LEGAL ── -->
+<section class="legal-section">
+  <div class="s-inner">
+    <button class="legal-toggle" onclick="toggleLegal(this)">
+      <span>Información legal</span>
+      <span class="legal-toggle-icon">+</span>
+    </button>
+    <div class="legal-content" id="legal-content" style="display:none;">
+      <div class="legal-tabs" style="margin-top:2rem;">
+        <button class="legal-tab active" onclick="showLegal('aviso',this)">Aviso legal</button>
+        <button class="legal-tab" onclick="showLegal('privacidad',this)">Privacidad</button>
+        <button class="legal-tab" onclick="showLegal('cookies',this)">Cookies</button>
+      </div>
+
+    <div class="legal-panel active" id="legal-aviso">
+      <h3>Datos identificativos</h3>
+      <p>Titular: Enrique López Rodríguez · NIF: 51947613C · Actividad: Diseño gráfico e identidad visual familiar y nupcial · Domicilio: Sevilla, España · Email: design@familid.es · Web: familid.es</p>
+      <h3>Objeto y ámbito</h3>
+      <p>El presente Aviso Legal regula el acceso y uso de familid.es/bodas, titularidad de Enrique López Rodríguez. El acceso implica la aceptación plena de las condiciones aquí expuestas.</p>
+      <h3>Propiedad intelectual</h3>
+      <p>Todos los contenidos — textos, imágenes, diseños, logos y código — son propiedad de FAMILID o de sus legítimos titulares. Queda prohibida su reproducción sin autorización expresa y por escrito.</p>
+      <h3>Responsabilidad</h3>
+      <p>FAMILID no se responsabiliza de los daños derivados del uso del sitio. Los logos generados son propuestas creativas y el resultado puede variar según el soporte de impresión.</p>
+      <h3>Legislación aplicable</h3>
+      <p>Este aviso legal se rige por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales de Sevilla.</p>
+      <p class="legal-updated">Última actualización: mayo 2025</p>
+    </div>
+
+    <div class="legal-panel" id="legal-privacidad">
+      <h3>Responsable del tratamiento</h3>
+      <p>Enrique López Rodríguez · NIF: 51947613C · design@familid.es</p>
+      <h3>¿Qué datos recogemos?</h3>
+      <p>A través del formulario recogemos: nombres de la pareja, email de contacto, fecha de la boda y las respuestas al cuestionario de identidad nupcial (estilo, colores, preferencias). No recogemos datos bancarios ni información sensible.</p>
+      <h3>¿Para qué los usamos?</h3>
+      <p>Crear y enviar el logo nupcial personalizado · Gestionar el pedido y la entrega · Comunicarnos sobre el encargo · Enviar el Save the Date y los archivos finales.</p>
+      <h3>Base legal</h3>
+      <p>Ejecución del contrato de prestación de servicios aceptado al enviar el formulario y consentimiento explícito para recibir comunicaciones relacionadas con el encargo.</p>
+      <h3>¿Cuánto tiempo conservamos los datos?</h3>
+      <p>Durante el tiempo necesario para la prestación del servicio y los plazos legalmente exigidos (mínimo 5 años por obligaciones fiscales).</p>
+      <h3>¿Compartimos los datos?</h3>
+      <p>No vendemos ni cedemos datos a terceros. Los proveedores de servicio (alojamiento, email) actúan como encargados del tratamiento bajo contrato y con las garantías del RGPD.</p>
+      <h3>Vuestros derechos</h3>
+      <p>Acceso, rectificación, supresión, limitación y portabilidad. Ejercedlos escribiendo a design@familid.es. Podéis reclamar ante la AEPD (aepd.es).</p>
+      <p class="legal-updated">Última actualización: mayo 2025</p>
+    </div>
+
+    <div class="legal-panel" id="legal-cookies">
+      <h3>¿Qué son las cookies?</h3>
+      <p>Pequeños archivos de texto que los sitios web almacenan en vuestro dispositivo para mejorar la experiencia de navegación.</p>
+      <h3>Cookies que usamos</h3>
+      <p><strong style="color:var(--cream);">Técnicas (necesarias):</strong> Imprescindibles para el funcionamiento básico del sitio. No requieren consentimiento.</p>
+      <p><strong style="color:var(--cream);">Cookies de terceros:</strong> El formulario embebido de Tally.so puede generar sus propias cookies de sesión. Consultad la política de privacidad de Tally.so para más información.</p>
+      <h3>¿Cómo gestionarlas?</h3>
+      <p>Podéis configurar vuestro navegador para rechazar o eliminar cookies en cualquier momento. Deshabilitar las cookies técnicas puede afectar al funcionamiento del formulario.</p>
+      <p class="legal-updated">Última actualización: mayo 2025</p>
+    </div>
+
+    </div><!-- /legal-content -->
+  </div>
+</section>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <a href="https://familid.es">
+    <img src="../images/FamilID_Imagotipo_oro.svg" alt="FAMILID" style="height:22px;opacity:0.6;">
+  </a>
+  <span class="footer-tag">Tu familia, tu marca eterna.</span>
+  <div class="footer-right">
+    <a href="https://familid.es">Familias</a>
+    <a href="mailto:design@familid.es">Contacto</a>
+    <a href="#formulario">Crear nuestro logo</a>
+    <span style="color:rgba(249,246,241,0.1);">© 2025 FAMILID</span>
+  </div>
+</footer>
+
+
+<script>
+// Carruseles
+const carousels = {};
+function initCarousel(id) {
+  const slides = document.querySelectorAll('#'+id+' .carousel-slide');
+  const dotsEl = document.getElementById(id+'-dots');
+  carousels[id] = { current: 0, total: slides.length };
+  slides.forEach((_,i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i===0?' active':'');
+    dot.onclick = () => goToSlide(id, i);
+    dotsEl.appendChild(dot);
+  });
+}
+function goToSlide(id, index) {
+  const c = carousels[id];
+  c.current = (index + c.total) % c.total;
+  document.querySelector('#'+id+' .carousel-track').style.transform = `translateX(-${c.current * 100}%)`;
+  document.querySelectorAll('#'+id+'-dots .carousel-dot').forEach((d,i) => d.classList.toggle('active', i===c.current));
+}
+function moveCarousel(id, dir) { goToSlide(id, carousels[id].current + dir); }
+initCarousel('galeria');
+initCarousel('carousel-logos');
+
+// Reveal on scroll
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Nav shadow
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(24,18,12,0.08)' : 'none';
+});
+
+// FAQ accordion
+function toggleFaq(btn) { btn.parentElement.classList.toggle('open'); }
+
+// Legal tabs
+function showLegal(id, btn) {
+  document.querySelectorAll('.legal-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.legal-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('legal-'+id).classList.add('active');
+}
+</script>
+</body>
+</html>
