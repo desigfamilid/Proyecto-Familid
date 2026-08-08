@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAMILID Familias — La marca de tu familia</title>
+<meta name="description" content="El logo exclusivo de tu familia. En vuestra ropa, en vuestras cosas. Identidad familiar personalizada creada en menos de 24 horas. Desde 48€.">
+<meta name="keywords" content="logo familiar personalizado, marca familia, identificar ropa niños, logo ropa colegio, identidad familiar, marca ropa familia, logo personalizado familia, vinilo ropa niños, marcar ropa colegio, logo familia personalizado españa">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://familid.es/familias/">
+<meta property="og:title" content="FAMILID Familias — La marca de tu familia">
+<meta property="og:description" content="El logo exclusivo de tu familia. En vuestra ropa, en vuestras cosas. Desde 48€.">
+<meta property="og:url" content="https://familid.es/familias/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --white:  #ffffff;
+  --cream:  #f9f6f1;
+  --ink:    #18120c;
+  --gold:   #d6b558;
+  --muted:  rgba(24,18,12,0.45);
+  --muted-light: rgba(249,246,241,0.5);
+  --paper2: #f0ece4;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'LINE Seed JP', sans-serif; background: var(--white); color: var(--ink); overflow-x: hidden; }
+
+/* ── TIPOGRAFÍA ── */
+.t-big { font-size: clamp(34px, 5.5vw, 66px); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+.t-mid { font-size: clamp(22px, 3.5vw, 38px); font-weight: 400; line-height: 1.2; letter-spacing: -0.01em; }
+.t-body { font-size: 17px; font-weight: 300; line-height: 1.75; }
+em { font-style: italic; color: var(--gold); }
+
+/* ── UTILIDADES ── */
+.label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); font-weight: 400; display: block; margin-bottom: 1.25rem; }
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.d1 { transition-delay: 0.08s; } .d2 { transition-delay: 0.16s; } .d3 { transition-delay: 0.24s; }
+.s-white { background: var(--white); padding: 6rem 2rem; }
+.s-cream { background: var(--cream); padding: 6rem 2rem; }
+.s-ink { background: var(--ink); padding: 6rem 2rem; }
+.s-center { text-align: center; }
+.s-inner { max-width: 740px; margin: 0 auto; }
+.s-inner-wide { max-width: 1040px; margin: 0 auto; }
+
+/* ── CTB ── */
+.ctb { display: inline-block; padding: 13px 32px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.25s; font-family: 'LINE Seed JP', sans-serif; cursor: pointer; border: none; }
+.ctb-familia { background: var(--ink); color: var(--gold); }
+.ctb-familia:hover { background: #2c1f10; }
+.ctb-gold { background: var(--gold); color: var(--ink); }
+.ctb-gold:hover { opacity: 0.85; }
+.ctb-outline-light { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
+.ctb-outline-light:hover { border-color: var(--white); background: rgba(255,255,255,0.06); }
+.ctb-outline-ink { background: transparent; color: var(--ink); border: 1px solid rgba(24,18,12,0.25); }
+.ctb-outline-ink:hover { background: var(--ink); color: var(--white); }
+
+/* ── NAV ── */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 1rem 2.5rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(24,18,12,0.07); transition: box-shadow 0.3s; }
+.nav-logo { display: flex; flex-direction: column; align-items: center; gap: 3px; text-decoration: none; }
+.nav-logo img { height: 44px; display: block; }
+.nav-logo-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 400; }
+.nav-links { display: flex; gap: 2.5rem; }
+.nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--ink); }
+
+/* ── HERO ── */
+.hero { min-height: 100vh; background: var(--white); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; }
+
+/* ── CARRUSEL ── */
+.swipe-outer { position: relative; width: 100%; margin: 3rem 0; }
+.swipe-wrap { width: 100%; overflow: hidden; }
+.swipe-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 8px; padding: 0 4%; cursor: grab; }
+.swipe-track::-webkit-scrollbar { display: none; }
+.swipe-track:active { cursor: grabbing; }
+.swipe-slide { flex: 0 0 88%; scroll-snap-align: center; border-radius: 16px; overflow: hidden; aspect-ratio: 3/4; background: rgba(24,18,12,0.05); }
+.swipe-slide img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+.swipe-hint { font-size: 11px; letter-spacing: 0.15em; color: var(--muted); text-align: center; margin-top: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.swipe-hint-line { width: 24px; height: 1px; background: var(--gold); }
+.swipe-nav { display: none; }
+@media (min-width: 769px) {
+  .swipe-outer { max-width: 500px; margin: 3rem auto; }
+  .swipe-track { padding: 0 5%; gap: 10px; }
+  .swipe-slide { flex: 0 0 78%; }
+  .swipe-hint { display: none; }
+  .swipe-nav { display: flex; justify-content: space-between; position: absolute; top: 50%; transform: translateY(-50%); left: -28px; right: -28px; pointer-events: none; z-index: 10; }
+  .swipe-nav-btn { pointer-events: all; width: 46px; height: 46px; border-radius: 50%; border: none; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; background: var(--white); color: var(--ink); box-shadow: 0 4px 16px rgba(24,18,12,0.1); transition: all 0.2s; }
+  .swipe-nav-btn:hover { background: var(--gold); transform: scale(1.08); }
+}
+
+/* ── DOLOR (dark) ── */
+.dolor-quote { font-size: clamp(22px, 3.5vw, 38px); font-weight: 400; color: var(--white); line-height: 1.3; max-width: 680px; margin: 0 auto; }
+.dolor-quote em { color: var(--gold); font-style: normal; }
+.dolor-sub { font-size: 17px; color: var(--muted-light); margin-top: 1.5rem; font-weight: 300; }
+
+/* ── BENEFICIOS 3 ── */
+.beneficios-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 3.5rem; }
+.ben-card { padding: 2rem 1.5rem; border: 1px solid rgba(24,18,12,0.1); border-radius: 2px; transition: border-color 0.2s; }
+.ben-card:hover { border-color: var(--gold); }
+.ben-num { font-size: 11px; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 0.75rem; }
+.ben-title { font-size: 18px; font-weight: 700; margin-bottom: 0.5rem; color: var(--ink); line-height: 1.3; }
+.ben-text { font-size: 15px; font-weight: 300; color: var(--muted); line-height: 1.65; }
+
+/* ── CÓMO FUNCIONA ── */
+.pasos { display: flex; flex-direction: column; gap: 0; margin-top: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+.paso { display: grid; grid-template-columns: 48px 1fr; gap: 1.5rem; padding: 1.75rem 0; border-top: 1px solid rgba(249,246,241,0.08); }
+.paso:last-child { border-bottom: 1px solid rgba(249,246,241,0.08); }
+.paso-num { font-size: 11px; letter-spacing: 0.15em; color: var(--gold); padding-top: 3px; }
+.paso-title { font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; }
+.paso-text { font-size: 14px; color: var(--muted-light); font-weight: 300; }
+.paso-badge { display: inline-block; margin-top: 0.5rem; font-size: 11px; color: var(--gold); background: rgba(214,181,88,0.1); padding: 2px 8px; border-radius: 2px; letter-spacing: 0.06em; }
+
+/* ── PACKS ── */
+.packs-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.25rem; margin-top: 3.5rem; }
+.pack-card { padding: 2rem; border: 1.5px solid rgba(24,18,12,0.12); border-radius: 2px; display: flex; flex-direction: column; background: var(--white); transition: border-color 0.2s; }
+.pack-card:hover { border-color: var(--gold); }
+.pack-chip { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; display: inline-block; margin-bottom: 1rem; align-self: flex-start; background: rgba(24,18,12,0.06); color: var(--muted); }
+.pack-name { font-size: 20px; font-weight: 700; color: var(--ink); margin-bottom: 0.2rem; line-height: 1.2; }
+.pack-price { font-size: 46px; font-weight: 300; letter-spacing: -0.03em; line-height: 1; margin: 0.75rem 0 0.2rem; color: var(--ink); }
+.pack-price sup { font-size: 0.3em; vertical-align: super; }
+.pack-price-note { font-size: 12px; color: var(--muted); margin-bottom: 1.5rem; }
+.pack-list { list-style: none; flex: 1; border-top: 1px solid rgba(24,18,12,0.08); }
+.pack-list li { padding: 0.75rem 0; border-bottom: 1px solid rgba(24,18,12,0.06); display: flex; align-items: flex-start; gap: 0.6rem; font-size: 14px; font-weight: 300; line-height: 1.4; color: var(--ink); }
+.pack-list li::before { content: '✦'; color: var(--gold); font-size: 8px; margin-top: 4px; flex-shrink: 0; }
+.pack-cta { margin-top: 1.5rem; }
+.pack-soon { font-size: 22px; font-weight: 300; color: var(--muted); margin: 0.75rem 0 0.2rem; }
+
+/* ── TESTIMONIOS ── */
+.test-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3rem; }
+.test-card { padding: 1.75rem; background: var(--cream); border-radius: 2px; }
+.test-stars { color: var(--gold); font-size: 13px; margin-bottom: 0.75rem; }
+.test-q { font-size: 14px; font-weight: 300; line-height: 1.7; color: var(--ink); margin-bottom: 0.75rem; font-style: italic; }
+.test-q em { color: var(--gold); }
+.test-author { font-size: 12px; color: var(--muted); font-weight: 400; }
+
+/* ── FAQ ── */
+.faq-list { margin-top: 2.5rem; }
+.faq-item { border-top: 1px solid rgba(24,18,12,0.08); }
+.faq-item:last-child { border-bottom: 1px solid rgba(24,18,12,0.08); }
+.faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; background: none; border: none; cursor: pointer; font-family: 'LINE Seed JP', sans-serif; font-size: 16px; font-weight: 400; color: var(--ink); text-align: left; gap: 1rem; transition: color 0.2s; }
+.faq-q:hover { color: var(--gold); }
+.faq-icon { font-size: 20px; color: var(--gold); flex-shrink: 0; transition: transform 0.3s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a { display: none; padding-bottom: 1.25rem; font-size: 15px; color: var(--muted); font-weight: 300; line-height: 1.75; }
+.faq-item.open .faq-a { display: block; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.25rem; }
+  .nav-links { display: none; }
+  .beneficios-3 { grid-template-columns: 1fr; }
+  .packs-grid { grid-template-columns: 1fr; }
+  .test-3 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="nav">
+  <a href="https://familid.es" class="nav-logo">
+    <img src="images/FamilID_Imagotipo_negro_oro.svg" alt="FAMILID">
+    <span class="nav-logo-label">Familias</span>
+  </a>
+  <div class="nav-links">
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#packs">Precios</a>
+    <a href="#faq">Preguntas</a>
+    <a href="https://familid.es/bodas/">Bodas</a>
+  </div>
+  <a href="#formulario" class="ctb ctb-familia">Quiero mi marca familiar</a>
+</nav>
+
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <span class="label reveal">FAMILID Familias</span>
+  <h1 class="t-big s-center reveal" style="max-width:760px;">
+    Tu familia ya tiene<br>su propia historia.<br><em>Ahora tiene su marca.</em>
+  </h1>
+  <p class="t-body s-center reveal" style="color:var(--muted);max-width:420px;margin:1.5rem auto 2.5rem;">
+    Un logo exclusivo que os une, os identifica y os representa.<br>En vuestra ropa, en vuestras cosas, para siempre.
+  </p>
+  <a href="#formulario" class="ctb ctb-familia reveal">Crear el logo de mi familia</a>
+
+  <div class="swipe-outer reveal" style="margin-top:4rem;">
+    <div class="swipe-nav">
+      <button class="swipe-nav-btn" onclick="scrollSwipe('swipe-f1',-1)">&#8592;</button>
+      <button class="swipe-nav-btn" onclick="scrollSwipe('swipe-f1',1)">&#8594;</button>
+    </div>
+    <div class="swipe-wrap">
+      <div class="swipe-track" id="swipe-f1">
+        <div class="swipe-slide"><img src="images/familias1.jpg" alt="Familia con su logo"></div>
+        <div class="swipe-slide"><img src="images/familias2.jpg" alt="Familia con su logo"></div>
+        <div class="swipe-slide"><img src="images/familias3.jpg" alt="Familia con su logo"></div>
+        <div class="swipe-slide"><img src="images/familias4.jpg" alt="Familia con su logo"></div>
+      </div>
+      <div class="swipe-hint">
+        <div class="swipe-hint-line"></div>
+        <span>Desliza para ver más</span>
+        <div class="swipe-hint-line"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── GOLPE EMOCIONAL ── -->
+<section class="s-ink s-center">
+  <div class="s-inner reveal">
+    <p class="dolor-quote">
+      El día que tu hijo saca su mochila<br>
+      y la reconoce entre todas las demás<br>
+      porque lleva <em>vuestra marca</em>…<br>
+      ese día lo entiendes todo.
+    </p>
+    <p class="dolor-sub reveal d2">No es solo un logo. Es sentido de pertenencia.<br>La prueba de que sois un equipo.</p>
+  </div>
+</section>
+
+
+<!-- ── BENEFICIOS ── -->
+<section class="s-white">
+  <div class="s-inner-wide">
+    <span class="label s-center reveal">Por qué FAMILID</span>
+    <h2 class="t-mid s-center reveal" style="max-width:540px;margin:0 auto;">
+      Lo que cambia cuando<br>tu familia tiene <em>su propia marca.</em>
+    </h2>
+    <div class="beneficios-3">
+      <div class="ben-card reveal d1">
+        <div class="ben-num">01</div>
+        <h3 class="ben-title">Sois un equipo con nombre propio</h3>
+        <p class="ben-text">Un símbolo que os une. Que dice "somos los García" sin que nadie tenga que preguntar. Identidad familiar desde el primer día.</p>
+      </div>
+      <div class="ben-card reveal d2">
+        <div class="ben-num">02</div>
+        <h3 class="ben-title">La ropa que no se pierde</h3>
+        <p class="ben-text">Los niños reconocen su ropa. Los profesores también. Sin rotuladores que se borran, sin etiquetas que se despegan. El logo va planchado para siempre.</p>
+      </div>
+      <div class="ben-card reveal d3">
+        <div class="ben-num">03</div>
+        <h3 class="ben-title">Ropa básica con el mismo orgullo</h3>
+        <p class="ben-text">Una camiseta de 8€ con vuestro logo vale tanto como una de marca. Y dura más, porque tiene valor. Ahorro real sin renunciar a nada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── GALERÍA LOGOS ── -->
+<section class="s-ink" style="padding:4rem 0;">
+  <em class="label s-center" style="font-style:italic;margin-bottom:2rem;">Logos reales de familias reales.</em>
+  <div class="swipe-outer" style="margin:0 auto;">
+    <div class="swipe-nav">
+      <button class="swipe-nav-btn" style="background:rgba(249,246,241,0.15);color:var(--white);box-shadow:0 4px 16px rgba(0,0,0,0.3);" onmouseover="this.style.background='var(--gold)';this.style.color='var(--ink)'" onmouseout="this.style.background='rgba(249,246,241,0.15)';this.style.color='var(--white)'" onclick="scrollSwipe('swipe-f2',-1)">&#8592;</button>
+      <button class="swipe-nav-btn" style="background:rgba(249,246,241,0.15);color:var(--white);box-shadow:0 4px 16px rgba(0,0,0,0.3);" onmouseover="this.style.background='var(--gold)';this.style.color='var(--ink)'" onmouseout="this.style.background='rgba(249,246,241,0.15)';this.style.color='var(--white)'" onclick="scrollSwipe('swipe-f2',1)">&#8594;</button>
+    </div>
+    <div class="swipe-wrap">
+      <div class="swipe-track" id="swipe-f2">
+        <div class="swipe-slide"><img src="images/logo-familia1.jpg" alt="Logo familiar ejemplo"></div>
+        <div class="swipe-slide"><img src="images/logo-familia2.jpg" alt="Logo familiar ejemplo"></div>
+        <div class="swipe-slide"><img src="images/logo-familia3.jpg" alt="Logo familiar ejemplo"></div>
+        <div class="swipe-slide"><img src="images/logo-familia4.jpg" alt="Logo familiar ejemplo"></div>
+      </div>
+      <div class="swipe-hint" style="color:rgba(249,246,241,0.3);">
+        <div class="swipe-hint-line"></div>
+        <span>Desliza para ver más</span>
+        <div class="swipe-hint-line"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CÓMO FUNCIONA ── -->
+<section class="s-ink" id="como-funciona" style="padding-top:2rem;">
+  <div class="s-inner">
+    <span class="label s-center reveal">El proceso</span>
+    <h2 class="t-mid s-center reveal" style="color:var(--white);max-width:420px;margin:0 auto;">
+      Tres pasos.<br><em>Un logo para siempre.</em>
+    </h2>
+    <div class="pasos reveal">
+      <div class="paso">
+        <span class="paso-num">I</span>
+        <div>
+          <h3 class="paso-title">Cuéntanos quiénes sois</h3>
+          <p class="paso-text">Un cuestionario sencillo de identidad familiar. Sin tecnicismos.</p>
+          <span class="paso-badge">Unos minutos</span>
+        </div>
+      </div>
+      <div class="paso">
+        <span class="paso-num">II</span>
+        <div>
+          <h3 class="paso-title">Nuestros agentes de IA crean vuestro logo</h3>
+          <p class="paso-text">Entrenados para familias. Traduce vuestra esencia en imagen.</p>
+          <span class="paso-badge">Menos de 24h</span>
+        </div>
+      </div>
+      <div class="paso">
+        <span class="paso-num">III</span>
+        <div>
+          <h3 class="paso-title">Lo recibís y lo ponéis en todo</h3>
+          <p class="paso-text">Logo en negro y en vuestro color. Listo para ropa, mochilas, pegatinas y mucho más.</p>
+          <span class="paso-badge">En vuestro email</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PACKS ── -->
+<section class="s-cream" id="packs">
+  <div class="s-inner-wide">
+    <span class="label s-center reveal">Los packs</span>
+    <h2 class="t-mid s-center reveal" style="max-width:460px;margin:0 auto;">
+      Sin letra pequeña.<br><em>Sin sorpresas.</em>
+    </h2>
+    <div class="packs-grid">
+
+      <div class="pack-card reveal">
+        <span class="pack-chip">Pack Digital</span>
+        <h3 class="pack-name">El logo de tu familia</h3>
+        <div class="pack-price"><sup>€</sup>48</div>
+        <p class="pack-price-note">IVA incluido · Un pago único · Para siempre</p>
+        <ul class="pack-list">
+          <li>Logo exclusivo creado a medida — nunca repetido</li>
+          <li>En negro + en vuestro color — SVG y PNG sin fondo</li>
+          <li>Un segundo color gratis cuando queráis</li>
+          <li>Formatos PNG, SVG y PDF en alta resolución</li>
+          <li>Para ropa, redes, invitaciones y cualquier soporte</li>
+          <li>Licencia personal de por vida — sin renovaciones</li>
+        </ul>
+        <div class="pack-cta"><a href="#formulario" class="ctb ctb-familia">Crear mi logo →</a></div>
+      </div>
+
+      <div class="pack-card reveal d1">
+        <span class="pack-chip">Pack Textil</span>
+        <h3 class="pack-name">Logo en toda la ropa</h3>
+        <div class="pack-soon">Próximamente</div>
+        <p class="pack-price-note">Digital + vinilos para planchar en casa</p>
+        <ul class="pack-list">
+          <li>Todo lo del Pack Digital incluido</li>
+          <li>~40 logos en vinilo recortados · 3 tamaños</li>
+          <li>Se pegan con plancha doméstica en 30 segundos</li>
+          <li>Resistentes al lavado — no se borran ni despegan</li>
+          <li>Llegan en sobre directamente a casa</li>
+        </ul>
+        <div class="pack-cta"><a href="https://tally.so/r/D4vv7l" target="_blank" class="ctb ctb-outline-ink" style="font-size:11px;padding:10px 22px;">Avisarme cuando esté disponible</a></div>
+      </div>
+
+      <div class="pack-card reveal d2">
+        <span class="pack-chip">Pack FAMILID</span>
+        <h3 class="pack-name">El kit completo</h3>
+        <div class="pack-soon">Próximamente</div>
+        <p class="pack-price-note">Digital + Textil + Pegatinas + Objeto</p>
+        <ul class="pack-list">
+          <li>Todo lo del Pack Digital y Textil incluido</li>
+          <li>Pegatinas en vinilo para mochilas, termos y más</li>
+          <li>Pegatinas en papel para sobres y regalos</li>
+          <li>Un objeto personalizado con vuestra marca</li>
+          <li>Todo junto en caja · listo para usar</li>
+        </ul>
+        <div class="pack-cta"><a href="https://tally.so/r/D4vv7l" target="_blank" class="ctb ctb-outline-ink" style="font-size:11px;padding:10px 22px;">Avisarme cuando esté disponible</a></div>
+      </div>
+
+      <div class="pack-card reveal d3">
+        <span class="pack-chip">Pack Atelier</span>
+        <h3 class="pack-name">Logo hecho a mano</h3>
+        <div class="pack-soon">Próximamente</div>
+        <p class="pack-price-note">Diseño 100% artesanal · Videollamada incluida</p>
+        <ul class="pack-list">
+          <li>Todo lo del Pack FAMILID incluido</li>
+          <li>Videollamada con nuestra diseñadora profesional</li>
+          <li>Logo creado 100% a mano — sin IA</li>
+          <li>Criterio artístico puro y dedicación completa</li>
+          <li>Solo 4 plazas al mes</li>
+        </ul>
+        <div class="pack-cta"><a href="https://tally.so/r/D4vv7l" target="_blank" class="ctb ctb-outline-ink" style="font-size:11px;padding:10px 22px;">Avisarme cuando esté disponible</a></div>
+      </div>
+
+    </div>
+    <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:2rem;" class="reveal">Todos los packs incluyen el archivo vectorial definitivo y licencia de uso personal de por vida.</p>
+  </div>
+</section>
+
+
+<!-- ── TESTIMONIOS ── -->
+<section class="s-white">
+  <div class="s-inner-wide">
+    <span class="label s-center reveal">Lo que dicen</span>
+    <h2 class="t-mid s-center reveal">Cuando lo ven, <em>lo entienden.</em></h2>
+    <div class="test-3">
+      <div class="test-card reveal d1">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-q">"Con un solo pedido marqué toda la ropa de mis tres hijos. <em>Los profesores ya saben cuál es de cada uno sin preguntar.</em>"</p>
+        <p class="test-author"><strong>Sara M.</strong> — Mamá de 3 · Madrid</p>
+      </div>
+      <div class="test-card reveal d2">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-q">"Compramos camisetas de 6€ y les pusimos el logo. <em>Mis hijos las cuidan más que las de marca.</em> Porque son suyas de verdad."</p>
+        <p class="test-author"><strong>Ana y Tomás</strong> — Familia de 5 · Málaga</p>
+      </div>
+      <div class="test-card reveal d3">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-q">"Mi hijo de 14 lo usó para hacer camisetas con sus amigos. <em>Lleva meses hablando de ello.</em> No esperaba que algo así le enganchara tanto."</p>
+        <p class="test-author"><strong>Javier R.</strong> — Papá de Pablo · Valencia</p>
+      </div>
+    </div>
+    <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:1.5rem;font-style:italic;" class="reveal">* Testimonios reales. Nombres modificados con permiso.</p>
+  </div>
+</section>
+
+
+<!-- ── FORMULARIO ── -->
+<section style="background:var(--ink);padding:5rem 2rem;text-align:center;" id="formulario">
+  <div class="s-inner">
+    <span class="label reveal">Empieza aquí</span>
+    <h2 class="t-mid reveal" style="color:var(--white);max-width:480px;margin:0 auto 1rem;">
+      Cuéntanos quiénes sois.<br><em>El resto lo hacemos nosotros.</em>
+    </h2>
+    <p class="t-body reveal" style="color:var(--muted-light);margin-bottom:2rem;">Sin tecnicismos. Sin complicaciones. Tu logo en menos de 24 horas.</p>
+    <a href="#formulario" class="ctb ctb-gold reveal" style="margin-bottom:2rem;display:inline-block;">Empezar el cuestionario</a>
+    <div class="reveal" style="background:var(--white);border-radius:2px;overflow:hidden;max-width:600px;margin:0 auto;">
+      <iframe src="https://tally.so/r/ODJEAY" width="100%" height="640" frameborder="0" marginheight="0" marginwidth="0" title="Cuestionario identidad familiar FAMILID" style="display:block;"></iframe>
+    </div>
+    <p style="font-size:12px;color:rgba(249,246,241,0.2);margin-top:1rem;" class="reveal">Sin compromiso · Logo exclusivo, nunca repetido · Licencia de por vida</p>
+  </div>
+</section>
+
+
+<!-- ── FAQ ── -->
+<section class="s-cream" id="faq">
+  <div class="s-inner">
+    <span class="label s-center reveal">Preguntas frecuentes</span>
+    <h2 class="t-mid s-center reveal">Lo que nos preguntáis<br><em>antes de dar el paso.</em></h2>
+    <div class="faq-list reveal">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>¿Cuánto tarda en llegar el logo?</span><span class="faq-icon">+</span></button><div class="faq-a">En menos de 24 horas recibiréis vuestro logo en el email. Sin esperas, sin "os avisamos". El logo llega antes de que lo esperéis.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>¿Los vinilos para la ropa funcionan en cualquier prenda?</span><span class="faq-icon">+</span></button><div class="faq-a">Funcionan en algodón, poliéster y mezclas — prácticamente cualquier ropa básica. Solo necesitáis una plancha doméstica. Se aplican en menos de 30 segundos y son resistentes al lavado.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>¿El logo es exclusivo para mi familia?</span><span class="faq-icon">+</span></button><div class="faq-a"><strong>Siempre.</strong> Cada logo se diseña específicamente para la familia que lo encarga. No reutilizamos diseños ni se lo vendemos a nadie más.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>¿Y si no me gusta el resultado?</span><span class="faq-icon">+</span></button><div class="faq-a">Nos lo decís y buscamos solución. Si queréis algo más personalizado y artesanal, el Pack Atelier incluye una videollamada con nuestra diseñadora antes de crear nada.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>¿También hacéis logos para bodas?</span><span class="faq-icon">+</span></button><div class="faq-a">Sí. La huella nupcial de FAMILID va en las invitaciones, el cartel, la web de boda y el ajuar. Y después de la boda, ese mismo logo os acompaña toda la vida. <a href="/bodas/" style="color:var(--gold);">Ver FAMILID Bodas →</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ── -->
+<footer style="background:var(--ink);padding:3rem 2rem;text-align:center;">
+  <a href="https://familid.es"><img src="images/FamilID_Imagotipo_oro.svg" alt="FAMILID" style="height:44px;display:block;margin:0 auto 0.75rem;opacity:0.8;"></a>
+  <p style="font-size:13px;color:rgba(249,246,241,0.25);font-style:italic;margin-bottom:2rem;">Tu familia, tu marca eterna.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;">
+    <a href="mailto:design@familid.es" style="display:flex;align-items:center;gap:8px;padding:10px 20px;background:rgba(249,246,241,0.06);border:1px solid rgba(249,246,241,0.1);border-radius:8px;text-decoration:none;color:rgba(249,246,241,0.65);font-size:13px;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(249,246,241,0.1)';this.style.color='rgba(249,246,241,0.65)'">✉ design@familid.es</a>
+    <a href="https://wa.me/34671975135" target="_blank" style="display:flex;align-items:center;gap:8px;padding:10px 20px;background:rgba(249,246,241,0.06);border:1px solid rgba(249,246,241,0.1);border-radius:8px;text-decoration:none;color:rgba(249,246,241,0.65);font-size:13px;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(249,246,241,0.1)';this.style.color='rgba(249,246,241,0.65)'">💬 WhatsApp</a>
+  </div>
+  <div style="border-top:1px solid rgba(249,246,241,0.07);padding-top:1.5rem;display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;">
+    <p style="font-size:11px;color:rgba(249,246,241,0.18);">© 2025 FAMILID · Todos los derechos reservados</p>
+    <div style="display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;">
+      <a href="https://familid.es" style="font-size:11px;color:rgba(249,246,241,0.2);text-decoration:none;">Inicio</a>
+      <a href="https://familid.es/bodas/" style="font-size:11px;color:rgba(249,246,241,0.2);text-decoration:none;">Bodas</a>
+      <a href="https://familid.es/#formulario" style="font-size:11px;color:rgba(249,246,241,0.2);text-decoration:none;">Política de privacidad</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+// Reveal
+const io = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); io.unobserve(x.target); } }), { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Nav shadow
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(24,18,12,0.08)' : 'none';
+});
+
+// Carrusel
+function scrollSwipe(id, dir) {
+  const t = document.getElementById(id);
+  const s = t.querySelector('.swipe-slide');
+  t.scrollBy({ left: dir * (s.offsetWidth + 8), behavior: 'smooth' });
+}
+
+// FAQ
+function toggleFaq(btn) { btn.parentElement.classList.toggle('open'); }
+</script>
+</body>
+</html>
